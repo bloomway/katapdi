@@ -1,0 +1,57 @@
+{
+  "groups": [
+    {
+      "name": "app.api.movie",
+      "type": "com.kleematik.katapdi.infra.configuration.ApiMovieProperties",
+      "sourceType": "com.kleematik.katapdi.infra.configuration.ApiMovieProperties"
+    },
+    {
+      "name": "app.batch",
+      "type": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties"
+    },
+    {
+      "name": "app.batch.thread",
+      "type": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties$ThreadProperties",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.api.movie.limit",
+      "type": "java.lang.Integer",
+      "sourceType": "com.kleematik.katapdi.infra.configuration.ApiMovieProperties"
+    },
+    {
+      "name": "app.batch.chunk-size",
+      "type": "java.lang.String",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties"
+    },
+    {
+      "name": "app.batch.thread.core-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties$ThreadProperties"
+    },
+    {
+      "name": "app.batch.thread.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties$ThreadProperties"
+    },
+    {
+      "name": "app.batch.thread.prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties$ThreadProperties"
+    },
+    {
+      "name": "app.batch.thread.queue-capacity",
+      "type": "java.lang.Integer",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties$ThreadProperties"
+    },
+    {
+      "name": "app.batch.work-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.kleematik.katapdi.infra.batch.configuration.BatchProperties"
+    }
+  ],
+  "hints": []
+}
