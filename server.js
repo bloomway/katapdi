@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-const dist_dir = "/dist/kata-imdb";
+const dist_dir = "/dist/imdb";
 
 const app = express();
 app.use(express.static(path.join(__dirname, dist_dir)));
