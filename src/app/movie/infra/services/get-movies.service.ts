@@ -57,7 +57,7 @@ export class GetMoviesService {
         state.currentPage = currentPage;
         state.totalPages = totalPages;
         state.totalItems = totalItems;
-        state.movies = movies.map((movieApi) =>
+        state.movies = movies.map((movieApi: MovieApi) =>
           this.toMovieDomainModel(movieApi)
         );
         return state;

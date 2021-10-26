@@ -13,14 +13,14 @@ import { MovieUiModel, Payload } from '../../../dto/movie.dto';
 import { GetMoviesService } from '../../services/get-movies.service';
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss'],
+  selector: "app-movie-list",
+  templateUrl: "./movie-list.component.html",
+  styleUrls: ["./movie-list.component.scss"],
 })
 export class MovieListComponent implements OnInit {
-  searchTerm: FormControl = this.formBuilder.control('');;
+  searchTerm: FormControl = this.formBuilder.control("");
   movies$: Observable<MovieUiModel> = this.searchTerm.valueChanges.pipe(
-    startWith(''),
+    startWith(""),
     debounceTime(500),
     distinctUntilChanged(),
     switchMap((query) => {
@@ -31,7 +31,7 @@ export class MovieListComponent implements OnInit {
         })
       );
     })
-  );;
+  );
 
   constructor(
     private getMoviesService: GetMoviesService,
