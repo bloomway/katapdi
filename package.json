@@ -1,15 +1,14 @@
 {
-  "name": "imdb",
-  "version": "0.0.0",
+  "name": "kata-imdb",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start-dev": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ng-build-prod": "ng build --prod",
-    "heroku-postbuild": "npm run ng-build-prod",
+    "build": "ng build --prod",
+    "heroku-postbuild": "npm run build",
     "start": "node server.js"
   },
   "private": true,
