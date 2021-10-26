@@ -1,0 +1,64 @@
+@import "variables.scss";
+@import "functions.scss";
+@import "mixins.scss";
+
+.movie-card {
+    background:#fff;
+    border: 1px solid $bg-color-primary;
+    margin-bottom: 30px;
+    box-shadow: $shadow;
+    border-radius: 15px;
+
+    & &__thumbnail {
+      display: flex;
+      justify-content: center;
+      background-color: $bg-color-primary;
+      border-radius: 15px 0 0 15px;
+
+      .movie-card__poster {
+          height: auto;
+          width: 100%;
+        }
+    }
+
+    & &__title {
+      @include font(
+        $font-size: 18pt
+      );
+    }
+
+    & &__subtitle {
+      @include font(
+        $font-size: 12pt,
+        $font-weight: $thin,
+        $font-style: italic,
+      );
+    }
+
+    & &__pencil {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
+
+}
+
+.movie-card__body {
+  text-align: center;
+
+  &-heading {
+    background-color: $bg-color-primary;
+    @include font(
+        $font-weight: $thin,
+        $font-size: 10pt
+      );
+  }
+
+  &-content {
+    display: block;
+    @include font(
+        $font-weight: $light,
+        $font-size: 11pt
+      );
+  }
+}

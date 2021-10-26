@@ -1,0 +1,50 @@
+<div class="container">
+  <app-edit-movie [movie]="movie"></app-edit-movie>
+  <div class="row movie-card">
+    <div class="movie-card__thumbnail col-sm-4 col-md-3 col-lg-3">
+      <img class="movie-card__poster" src="assets/images/icon_poster.svg" alt="icon movie">
+    </div>
+
+    <div class="movie-card__content col-sm-8 col-md-9 col-lg-9 py-3">
+      <div class="row movie-card__header">
+        <div class="col-md-11 col-lg-11">
+          <h5 class="movie-card__title">{{ movie.primaryTitle }}</h5>
+        </div>
+        <!-- Button trigger modal -->
+        <div class="col-md-1 col-lg-1" data-bs-toggle="modal" data-bs-target="#moviePopup">
+          <img class="movie-card__pencil" src="assets/images/icon_pencil.svg" alt="icon pencil" />
+        </div>
+        <h6 class="movie-card__subtitle">
+          Original title: {{ movie.originalTitle }}
+        </h6>
+      </div>
+
+      <div class="row movie-card__body">
+        <div class="col-md-3">
+          <div class="movie-card__body-heading">ID</div>
+          <span class="movie-card__body-content">{{ movie.tconst }}</span>
+        </div>
+        <div class="col-md-2">
+          <div class="movie-card__body-heading">Minutes</div>
+          <span class="movie-card__body-content">{{ movie.runtimeMinutes }}</span>
+        </div>
+        <div class="col-md-3">
+          <div class="movie-card__body-heading">Start year</div>
+          <span class="movie-card__body-content">{{ movie.startYear }}</span>
+        </div>
+        <div class="col-md-2">
+          <div class="movie-card__body-heading">End year</div>
+          <span class="movie-card__body-content">{{ movie.endYear }}</span>
+        </div>
+        <div class="col-md-2">
+          <div class="movie-card__body-heading">Is adult</div>
+          <span class="movie-card__body-content">{{ movie.isAdult }}</span>
+        </div>
+        <div class="col-md-3">
+          <div class="movie-card__body-heading">Genres</div>
+          <span class="movie-card__body-content">{{ movie.genres }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

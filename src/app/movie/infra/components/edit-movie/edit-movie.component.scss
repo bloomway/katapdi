@@ -1,0 +1,76 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "functions.scss";
+
+.modal__icon-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .modal__icon {
+    cursor: pointer;
+  }
+}
+
+.form__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-title {
+    @include font(
+      $font-size: 16pt
+    )
+  }
+}
+
+.form__checkbox-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .form__checkbox {
+    display: inline-block;
+  }
+
+  .form__checkbox-label {
+    @include font(
+      $font-size: 14pt,
+    );
+  }
+}
+
+.form-group {
+  padding: 5px;
+  margin-bottom: 10px;
+
+  input {
+    border-radius: 0
+  }
+
+  .form__label {
+    @include font(
+      $font-size: 14pt,
+      $font-weight: $medium,
+    )
+  }
+
+  .popup-button {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      width: 40%;
+      border-radius: 0;
+    }
+
+    &-ok {
+      background-image: $gradiant-primary;
+      color: #fff;
+    }
+    &-cancel {
+      background-color: $gray_9b;
+      color: #fff;
+    }
+  }
+}
+

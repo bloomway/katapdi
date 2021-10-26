@@ -1,0 +1,11 @@
+/* convert pt to px */
+@function px($value) {
+  $current-unit: unit($value);
+  $extracted-value: $value / ($value * 0 + 1);
+
+  @if $current-unit == 'pt' {
+    @return 0px + (1.3333 * $extracted-value);
+  } @else {
+    @error "Can't convert '#{$value}' to unit 'px'!";
+  }
+}

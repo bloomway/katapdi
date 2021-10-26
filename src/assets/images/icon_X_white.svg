@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon X</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="guideline" transform="translate(-530.000000, -199.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Icons" transform="translate(440.000000, 166.000000)">
+                <g id="X_icon_white" transform="translate(85.000000, 28.000000)">
+                    <polygon id="icon-X" points="22.6530612 5 15 12.6530612 7.34693878 5 5 7.34693878 12.6530612 15 5 22.6530612 7.34693878 25 15 17.3469388 22.6530612 25 25 22.6530612 17.3469388 15 25 7.34693878"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
