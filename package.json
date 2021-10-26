@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start:dev": "ng serve",
+    "build:dev": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build": "ng build",
+    "build": "ng build --configuration=production",
     "heroku-postbuild": "npm run build",
-    "start:prod": "node server.js"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
