@@ -1,29 +1,28 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { defaultMovie, Movie } from "src/app/movie/domain/movie.model";
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Movie } from 'src/app/movie/domain/movie.model';
 
 @Component({
-  selector: "app-edit-movie",
-  templateUrl: "./edit-movie.component.html",
-  styleUrls: ["./edit-movie.component.scss"],
+  selector: 'app-edit-movie',
+  templateUrl: './edit-movie.component.html',
+  styleUrls: ['./edit-movie.component.scss'],
 })
 export class EditMovieComponent implements OnInit {
   @Input()
-  movie: Movie = defaultMovie;
+  movie: Movie;
 
   editMovieForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    const { isAdult, runtimeMinutes, startYear, endYear, genres } = this.movie;
 
     this.editMovieForm = this.formBuilder.group({
-      isAdult: this.formBuilder.control(isAdult),
-      minutes: this.formBuilder.control(runtimeMinutes),
-      startYear: this.formBuilder.control(startYear),
-      endYear: this.formBuilder.control(endYear),
-      genres: this.formBuilder.control(genres),
+      isAdult: this.formBuilder.control(this.movie.adult),
+      minutes: this.formBuilder.control(this.movie.runtimeMinutes),
+      startYear: this.formBuilder.control(this.movie.startYear),
+      endYear: this.formBuilder.control(this.movie.endYear),
+      genres: this.formBuilder.control(this.movie.genres),
     });
   }
 }

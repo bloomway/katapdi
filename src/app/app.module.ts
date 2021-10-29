@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './components/footer/footer.component';
 import { MovieModule } from './movie/movie.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
@@ -16,7 +15,6 @@ import { ScrollTopComponent } from './components/scroll-top/scroll-top.component
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    FooterComponent,
     ScrollTopComponent,
   ],
   imports: [

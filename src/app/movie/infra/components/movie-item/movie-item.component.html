@@ -1,50 +1,77 @@
-<div class="container">
-  <app-edit-movie [movie]="movie"></app-edit-movie>
+<div class="container-sm container-md container-lg container-xl">
+
+  <!-- <app-edit-movie [movie]="movie"></app-edit-movie> -->
+
   <div class="row movie-card">
-    <div class="movie-card__thumbnail col-sm-4 col-md-3 col-lg-3">
-      <img class="movie-card__poster" src="assets/images/icon_poster.svg" alt="icon movie">
-    </div>
-
-    <div class="movie-card__content col-sm-8 col-md-9 col-lg-9 py-3">
-      <div class="row movie-card__header">
-        <div class="col-md-11 col-lg-11">
-          <h5 class="movie-card__title">{{ movie.primaryTitle }}</h5>
+    <div class="movie-card__content col-9 col-sm-9 col-md-10 col-lg-10 col-xl-10">
+      <div class="row movie-card__header mt-2 mb-3">
+        <div class="d-flex justify-content-start movie-card__headline">
+          <span class="movie-card__title flex-grow-1">
+            {{ movie.primaryTitle }}
+          </span>
+          <!-- Button trigger modal -->
+          <span class="movie-card__pencil" data-bs-toggle="modal" data-bs-target="#editMovieModal">
+            <img class="movie-card__pencil-icon" src="assets/images/icon_pencil.svg" alt="icon pencil" />
+          </span>
         </div>
-        <!-- Button trigger modal -->
-        <div class="col-md-1 col-lg-1" data-bs-toggle="modal" data-bs-target="#moviePopup">
-          <img class="movie-card__pencil" src="assets/images/icon_pencil.svg" alt="icon pencil" />
-        </div>
-        <h6 class="movie-card__subtitle">
+        <span class="movie-card__subtitle flex-grow-1">
           Original title: {{ movie.originalTitle }}
-        </h6>
+        </span>
       </div>
 
-      <div class="row movie-card__body">
-        <div class="col-md-3">
-          <div class="movie-card__body-heading">ID</div>
-          <span class="movie-card__body-content">{{ movie.tconst }}</span>
+      <div class="row movie-card__body mb-3">
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>ID</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.tconst }}</span>
+          </div>
         </div>
-        <div class="col-md-2">
-          <div class="movie-card__body-heading">Minutes</div>
-          <span class="movie-card__body-content">{{ movie.runtimeMinutes }}</span>
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>Minutes</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.runtimeMinutes }}</span>
+          </div>
         </div>
-        <div class="col-md-3">
-          <div class="movie-card__body-heading">Start year</div>
-          <span class="movie-card__body-content">{{ movie.startYear }}</span>
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>Start year</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.startYear }}</span>
+          </div>
         </div>
-        <div class="col-md-2">
-          <div class="movie-card__body-heading">End year</div>
-          <span class="movie-card__body-content">{{ movie.endYear }}</span>
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>End year</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.endYear }}</span>
+          </div>
         </div>
-        <div class="col-md-2">
-          <div class="movie-card__body-heading">Is adult</div>
-          <span class="movie-card__body-content">{{ movie.isAdult }}</span>
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>Is adult</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.adult }}</span>
+          </div>
         </div>
-        <div class="col-md-3">
-          <div class="movie-card__body-heading">Genres</div>
-          <span class="movie-card__body-content">{{ movie.genres }}</span>
+        <div class="body__item">
+          <div class="movie-card__body-heading">
+            <span>Genres</span>
+          </div>
+          <div class="movie-card__body-content">
+            <span>{{ movie.genres }}</span>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="movie-card__thumbnail col-3 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+      <img class="movie-card__poster" src="assets/images/icon_poster.svg" alt="icon movie">
     </div>
   </div>
 </div>
