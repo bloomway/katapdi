@@ -6,7 +6,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./scroll-top.component.scss'],
 })
 export class ScrollTopComponent implements OnInit {
-  arrowUpVisible: boolean = false;
+  arrowUpVisible = false;
 
   constructor() {}
 
