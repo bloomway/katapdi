@@ -76,11 +76,11 @@ export class GetMoviesService {
       originalTitle: v.originalTitle,
       primaryTitle: v.primaryTitle,
       titleType: v.titleType,
-      isAdult: v.adult,
+      adult: v.adult ? 'Y' : 'N',
       startYear: v.startYear,
       endYear: 'N' === v.endYear ? v.endYear : '-',
       runtimeMinutes: 'N' === v.runtimeMinutes ? v.runtimeMinutes : '-',
-      genres: v.genres.join(','),
+      genres: 'N' === v.genres.join(',') ? '-' : v.genres.join(','),
     } as Movie;
   }
 }

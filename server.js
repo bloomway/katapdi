@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require("path");
+const pjson = require('./package.json');
 
 const APP_PORT = process.env.PORT || 8080;
-const DIST_DIR = "/dist/imdb";
+const DIST_DIR = `/dist/${pjson.name}`;
 
 const app = express();
 app.use(express.static(path.join(".", DIST_DIR)));

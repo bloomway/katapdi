@@ -1,14 +1,14 @@
 export const defaultMovie: Movie = {
-  id: 0,
-  tconst: "",
-  originalTitle: "",
-  primaryTitle: "",
-  titleType: "",
-  isAdult: false,
-  startYear: "",
-  endYear: "",
-  runtimeMinutes: "",
-  genres: "",
+  id: 3,
+  tconst: 'tt0000003',
+  originalTitle: 'Pauvre Pierrot',
+  primaryTitle: 'Pauvre Pierrot',
+  titleType: 'short',
+  adult: 'No',
+  startYear: '1892',
+  endYear: '\\N',
+  runtimeMinutes: '4',
+  genres: 'Animation,Comedy,Romance',
 };
 
 export interface Movie {
@@ -17,7 +17,7 @@ export interface Movie {
   originalTitle: string;
   primaryTitle: string;
   titleType: string;
-  isAdult: boolean;
+  adult: string;
   startYear: string;
   endYear: string;
   runtimeMinutes: string;
