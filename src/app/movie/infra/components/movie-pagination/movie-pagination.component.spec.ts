@@ -6,8 +6,6 @@ import {MockDeclaration} from 'ng-mocks';
 describe('MoviePaginationComponent', () => {
   let component: MoviePaginationComponent;
   let fixture: ComponentFixture<MoviePaginationComponent>;
-  const currenPage = 0;
-  const totalPages = 3;
 
   beforeEach(async () => {
 
@@ -23,8 +21,6 @@ describe('MoviePaginationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MoviePaginationComponent);
     component = fixture.componentInstance;
-    component.totalPages = totalPages;
-    component.currentPage = currenPage;
     fixture.detectChanges();
   });
 
@@ -32,9 +28,39 @@ describe('MoviePaginationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain 5 li elements', () => {
-    const all = fixture.nativeElement.querySelectorAll('li');
-    expect(all.length).toEqual(5);
+  it('should display one unordered list item', () => {
+    const ul = fixture.nativeElement.querySelectorAll('ul');
+    expect(ul.length).toEqual(1);
+  });
+
+  it('should not display list item when totalPage is equal to zero', () => {
+
+    component.totalPages = 0;
+    component.currentPage = 0;
+    fixture.detectChanges();
+
+    const ul = fixture.nativeElement.querySelectorAll('ul');
+    expect(ul.length).toEqual(0);
+  });
+
+  it('should display five list items', () => {
+
+    component.totalPages = 3;
+    component.currentPage = 0;
+    fixture.detectChanges();
+
+    const li = fixture.nativeElement.querySelectorAll('li');
+    expect(li.length).toEqual(5);
+  });
+
+  it('should display eight li items', () => {
+
+    component.totalPages = 20;
+    component.currentPage = 0;
+    fixture.detectChanges();
+
+    const li = fixture.nativeElement.querySelectorAll('li');
+    expect(li.length).toEqual(8);
   });
 
 });

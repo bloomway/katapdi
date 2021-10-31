@@ -51,7 +51,7 @@
     <app-movie-item [movie]="movie"></app-movie-item>
     <app-edit-movie [movie]="movie"></app-edit-movie>
   </div>
-  <app-movie-pagination
+  <app-movie-pagination *ngIf="uiModel.totalPages !== 0"
           [totalPages]="uiModel.totalPages"
           [currentPage]="uiModel.currentPage">
   </app-movie-pagination>
