@@ -6,11 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TotalPagesPipe implements PipeTransform {
   transform(totalPage: number, currentPage: number): Array<string> {
 
-    if (currentPage < 0) {
-      return null;
-    }
-
-    if (totalPage < 0) {
+    if (currentPage < 0 || totalPage < 0) {
       return null;
     }
 
