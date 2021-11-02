@@ -14,4 +14,11 @@ export class MoviePaginationComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  cssClass(numPage: string): any {
+    return {
+      'page-link': numPage !== '...',
+      'movie__pagination-link': numPage !== '...'
+    };
+  }
 }

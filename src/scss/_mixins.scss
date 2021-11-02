@@ -1,3 +1,5 @@
+@import "vendor/rfs.scss";
+
 @mixin font(
   $font-size,
   $font-weight: $regular,
@@ -5,5 +7,5 @@
 ) {
   font-style: $font-style;
   font-weight: $font-weight;
-  font-size: px($font-size);
+  @include font-size(rem($font-size))
 }

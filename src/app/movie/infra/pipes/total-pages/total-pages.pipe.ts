@@ -5,7 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TotalPagesPipe implements PipeTransform {
   transform(totalPage: number, currentPage: number): Array<string> {
-    console.log('value: ' + totalPage);
+
+    if (currentPage < 0 || totalPage < 0) {
+      return null;
+    }
+
+    if (totalPage === 0) {
+      return [];
+    }
 
     const result: Array<string> = [];
 

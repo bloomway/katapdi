@@ -6,20 +6,26 @@
 -->
 
 <!-- Modal -->
-<div class="modal fade" id="moviePopup" tabindex="-1" aria-labelledby="editMovie" aria-hidden="true">
+<div class="modal fade"
+     id="editMovieModal"
+     tabindex="-1"
+     aria-labelledby="editMovie"
+     aria-hidden="true">
+
   <div class="modal-dialog">
     <div class="modal-content">
-
       <div class="modal-body">
-        <div class="modal__icon-wrapper">
+        <div class="modal__icon-wrapper" data-bs-dismiss="modal">
           <img class="modal__icon" src="assets/images/X_icon.svg" alt="close popup" width="10" height="10"/>
         </div>
         <form [formGroup]="editMovieForm">
           <div class="form__header">
-            <h3 class="form__header-title">Editing</h3>
+            <h1 class="form__header-title">Editing</h1>
           </div>
           <div class="form-group row">
-            <label for="minutes-input" class="offset-sm-1 col-sm-3 col-form-label form__label">Is adult</label>
+            <label for="minutes-input" class="offset-sm-1 col-sm-3 col-form-label form__label">
+              Is adult
+            </label>
             <div class="col-sm-8 form__checkbox-wrapper">
                 <span class="form-check form__checkbox">
                   <input
@@ -27,9 +33,7 @@
                     formControlName="isAdult"
                     type="checkbox"
                     id="form__checkbox-yes">
-                  <label class="form-check-label" for="form__checkbox-label">
-                    Yes
-                  </label>
+                  Yes
                 </span>
                 <span class="form-check form__checkbox">
                   <input
@@ -37,9 +41,7 @@
                     formControlName="isAdult"
                     type="checkbox"
                     id="form__checkbox-no">
-                  <label class="form-check-label" for="form__checkbox-label">
-                    No
-                  </label>
+                  No
                 </span>
             </div>
           </div>

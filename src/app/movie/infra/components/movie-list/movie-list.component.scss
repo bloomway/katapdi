@@ -3,26 +3,29 @@
 @import "mixins.scss";
 
 .content {
-  margin-right: 50px;
+  margin-right: .5rem;
 }
 
 .navbar {
   background-image: $gradiant-primary;
   padding: 0;
-
   .logo {
-    display: inline-flex;
-    justify-content: center;
-    width: 100px;
-    height:50px;
     padding-left: 10px;
   }
+  .flag {
+    background-color: transparent;
+  }
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("../../../../../assets/images/icon_magnify_white.svg");
+  background-size: 70%;
 }
 
 .search-form {
   justify-content: flex-start;
-  width: 30%;
   padding-top: 14px;
+  width: 50%;
 
   & &__inner {
     width: 100%;
@@ -50,28 +53,22 @@
     position: absolute;
     right: 0;
     top: 0;
+    width: 2rem;
     height: 100%;
     background: transparent;
     border: 0;
     padding: 0;
     cursor: pointer;
-    width: 50px;
   }
 }
 
-.flag {
-  position: absolute;
-  right: 0;
+.navbar__left .spacer {
+  display: none;
+}
 
-  &__item {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-
-  &__image {
-    width: 30px;
-    height: auto;
+@media(max-width: 575px) {
+  .navbar__left .spacer {
+    display: block;
+    flex: 1 1 auto;
   }
 }

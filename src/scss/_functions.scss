@@ -1,11 +1,27 @@
+@use "sass:math";
+
 /* convert pt to px */
 @function px($value) {
   $current-unit: unit($value);
   $extracted-value: $value / ($value * 0 + 1);
 
   @if $current-unit == 'pt' {
-    @return 0px + (1.3333 * $extracted-value);
+    @return 0px + math.ceil((1.3333 * $extracted-value));
   } @else {
     @error "Can't convert '#{$value}' to unit 'px'!";
   }
+}
+
+@function em($pt) {
+  $value: px($pt);
+  $extracted-value: $value / ($value * 0 + 1);
+  @debug $extracted-value;
+  @return 0em + ($extracted-value / 16);
+}
+
+@function rem($pt) {
+  $value: px($pt);
+  $extracted-value: $value / ($value * 0 + 1);
+  @debug $extracted-value;
+  @return 0rem + ($extracted-value / 16);
 }

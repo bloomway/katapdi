@@ -1,26 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-ligth">
-  <a class="logo navbar-brand" href="#">
-    <img class="logo__image d-inline-block align-top" src="assets/images/logo.svg" alt="logo">
-  </a>
-  <div class="search-form">
-    <form>
-      <div class="search-form__inner">
-        <div class="search-form__input">
-          <input class="form-control form-control-sm" [formControl]="searchTerm" type="text"
-            placeholder="Search a movie..." />
-          <button class="search-form__button" type="button">
-            <img class="" src="assets/images/icon_magnify.svg" alt="search button" />
-          </button>
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light bg-light">
+  <div class="d-flex align-items-center flex-grow-1 flex-shrink-1 navbar__left">
+    <a class="logo navbar-brand" href="#">
+      <img class="logo__image d-inline-block align-top" src="assets/images/logo.svg" alt="logo">
+    </a>
+    <div class="col-xs spacer"></div>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#searchFormToggler"
+            aria-controls="searchFormToggler"
+            aria-expanded="false"
+            aria-label="Toggle search">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="searchFormToggler">
+      <form class="search-form">
+        <div class="search-form__inner">
+          <div class="search-form__input">
+            <input class="form-control form-control-sm"
+                   [formControl]="searchTerm"
+                   type="text"
+                   placeholder="Search a movie..." />
+            <button class="search-form__button" type="button">
+              <img class="" src="assets/images/icon_magnify.svg" alt="search button" />
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-  <div class="flag my-2 my-lg-0">
-    <span class="flag__item">
-      <img class="flag__image" src="assets/images/flag_usa.svg" alt="usa flag" />
+  <div class="d-flex justify-content-evenly my-2 my-lg-0 flag">
+    <span class="px-1 flag__item">
+      <img class="flag__fr" src="assets/images/flag_fr.svg"  alt="french flag"/>
     </span>
-    <span class="flag__item">
-      <img class="flag__image" src="assets/images/flag_fr.svg" alt="france flag" />
+    <span class="px-1 flag__item">
+      <img class="flag__usa" src="assets/images/flag_usa.svg"  alt="usa flag"/>
     </span>
   </div>
 </nav>
@@ -31,17 +45,14 @@
   </div>
 </ng-template>
 
-<div class="row content" *ngIf="movies$ | async as uiModel; else loading">
-
-    <div class="mt-4">
-      <div class="row">
-        <div class="col-xs-12 col-md-4" *ngFor="let movie of uiModel.movies">
-          <app-movie-item [movie]="movie"></app-movie-item>
-        </div>
-      </div>
-    </div>
-    <app-movie-pagination
-      [totalPages]="uiModel.totalPages"
-      [currentPage]="uiModel.currentPage">
-    </app-movie-pagination>
+<div class="row mt-4 content" *ngIf="movies$ | async as uiModel; else loading">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
+       *ngFor="let movie of uiModel.movies">
+    <app-movie-item [movie]="movie"></app-movie-item>
+    <app-edit-movie [movie]="movie"></app-edit-movie>
+  </div>
+  <app-movie-pagination *ngIf="uiModel.totalPages !== 0"
+          [totalPages]="uiModel.totalPages"
+          [currentPage]="uiModel.currentPage">
+  </app-movie-pagination>
 </div>
