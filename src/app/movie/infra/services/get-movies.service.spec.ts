@@ -1,8 +1,7 @@
-import {fakeAsync, flushMicrotasks, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
 import { GetMoviesService } from './get-movies.service';
 import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
-import {MovieUiModel} from '../../dto/movie.dto';
 import {defaultMovie, Movie} from '../../domain/movie.model';
 import {environment} from '../../../../environments/environment';
 
